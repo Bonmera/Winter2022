@@ -14,7 +14,7 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_CurrVelocity = Vector3.zero;
     private Vector2 screenBounds;
     private Vector2 playerOffset;
-
+ 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
