@@ -7,6 +7,16 @@ public class PlayerSensor : MonoBehaviour
     private interactable focus = null;
     private HashSet<Collider2D> inventoryInstances = new HashSet<Collider2D>();
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("space") && focus!=null)
+        {
+            focus.Interact();
+        }
+        
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "InventoryItem")
@@ -19,7 +29,7 @@ public class PlayerSensor : MonoBehaviour
             }
             else
             {
-                if (collision.gameObject != focus)
+                if (collision.gameObject.GetComponent<interactable>() != focus)
                 {
                     if (Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, focus.transform.position))
                     {

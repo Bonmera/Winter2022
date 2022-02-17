@@ -14,24 +14,25 @@ public class interactable : MonoBehaviour
     public void Interact()
     {
         bool wasPickedUp = Inventory.instance.Add(item);
-        if (wasPickedUp)
+        if (wasPickedUp && !hasInteracted)
         {
+            hasInteracted = true;
             Destroy(gameObject);
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isFocus && !hasInteracted)
+       /* if (Input.GetKeyDown("space") && isFocus && !hasInteracted)
         {
             Interact();
             hasInteracted = true;
-        }
+        }*/ 
     }
     
     public void OnFocused(Transform playerTransform)
     {
-        StartCoroutine(SetFocus());
+        isFocus = true;
         player = playerTransform;
         transform.gameObject.GetComponent<SpriteRenderer>().material = highlightMaterial;
     }
@@ -49,9 +50,4 @@ public class interactable : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    IEnumerator SetFocus()
-    {
-        yield return 0;
-        isFocus = true;
-    }
 }
