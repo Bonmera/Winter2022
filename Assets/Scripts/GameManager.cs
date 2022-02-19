@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
     private TransitionScript transition;
+    private AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         transition = transitionPanel.GetComponent<TransitionScript>();
         InventoryPanel.SetActive(false);
+        audioManager = AudioManager.instance;
+        if(audioManager == null)
+        {
+            Debug.LogError("audioManager is null");
+        }
+        audioManager.PlaySound("Outro");
     }
 
     // Update is called once per frame

@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 722018983}
   - component: {fileID: 722018984}
   - component: {fileID: 722018985}
+  - component: {fileID: 722018986}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -663,6 +664,27 @@ MonoBehaviour:
   protagRoom: {fileID: 1511552677}
   basicRoom: {fileID: 160937458}
   player: {fileID: 795244815}
+--- !u!114 &722018986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722018982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13212598370a77428a9c30d536b6513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Outro
+    clip: {fileID: 8300000, guid: 47581ad5852b5664ea1cff74a0187fdc, type: 3}
+    volume: 0.75
+    pitch: 1
+  - name: Cave
+    clip: {fileID: 8300000, guid: 568b9ff93f4b82c4c92e4daee529a626, type: 3}
+    volume: 0.75
+    pitch: 1
 --- !u!1001 &727841307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,7 +1025,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.135
+  orthographic size: 0.56
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
