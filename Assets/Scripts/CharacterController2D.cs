@@ -7,6 +7,7 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private float k_BaseSpeed = 40f;
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
+    [SerializeField] private GameManager gameManager;
 
     private Rigidbody2D m_Rigidbody2D;
     private float k_HorizontalSpeed = 0f;
@@ -54,4 +55,15 @@ public class CharacterController2D : MonoBehaviour
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.transform.position.x-1*screenBounds.x + playerOffset.x , Camera.main.transform.position.x+ screenBounds.x - playerOffset.x ), Mathf.Clamp(transform.position.y, Camera.main.transform.position.y-screenBounds.y + playerOffset.y , Camera.main.transform.position.y + screenBounds.y - playerOffset.y ), transform.position.z);
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        string[] tagNames = collision.gameObject.tag.Split('_');
+        
+        if(tagNames.Length > 1 && tagNames[tagNames.Length - 1].Equals("Exit"))
+        {
+            gameManager.SwitchRoom(tagNames[0]);
+        }
+    }
+
 }

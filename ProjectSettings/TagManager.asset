@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - InventoryItem
+  - protagRoom_Exit
   layers:
   - Default
   - TransparentFX
