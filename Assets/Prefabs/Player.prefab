@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5456571334872217782}
   - component: {fileID: 5456571334872217777}
   - component: {fileID: 3767725155653614398}
+  - component: {fileID: 795244816}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -124,8 +125,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5456571334872217777
-CircleCollider2D:
+--- !u!70 &795244816
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

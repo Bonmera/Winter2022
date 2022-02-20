@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class TransitionMapping
+{
+    public GameObject entryRoom;
+    public BoxCollider2D exitCollider;
+    public Transform entryPoint;
+}
+
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,14 +22,21 @@ public class GameManager : MonoBehaviour
     public GameObject janitorClosetRoom;
     public GameObject storageRoom;
     public GameObject grooveRoom;
+    public GameObject firstFloorHallway;
     public GameObject player;
     public GameObject DialogueBox;
+
+    [SerializeField]
+    private TransitionMapping[] Transitions;
+
+    private Dictionary<Collider2D, TransitionMapping> TransitionMap;
 
     private TransitionScript transition;
     private AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
+        TransitionMap = new Dictionary<Collider2D, TransitionMapping>();
         transition = transitionPanel.GetComponent<TransitionScript>();
         InventoryPanel.SetActive(false);
         DialogueBox.SetActive(false);
@@ -29,6 +45,13 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("audioManager is null");
         }
+
+        for(int i = 0; i < Transitions.Length; i++)
+        {
+            TransitionMap.Add(Transitions[i].exitCollider, Transitions[i]);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -40,38 +63,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SwitchRoom(string originRoom)
+    public void SwitchRoom(Collider2D door)
     {
-        switch (originRoom)
+        if(TransitionMap.ContainsKey(door))
         {
-            case "protagRoom":
-                //Entering Kitchen
-                // ChangeRoom(janitorClosetRoom);
-                //Entering Janitor Closet
-                // ChangeRoom(janitorClosetRoom);
-                //Entering Storage Room
-                // ChangeRoom(storageRoom);
-                //Entering Groove
-                ChangeRoom(grooveRoom);
-
-                //Entering BasicRoom
-                /*transition.StartTransition();
-                Vector2 startPosition = basicRoom.transform.Find("startPoint").gameObject.transform.position;
-                player.transform.position = new Vector3(startPosition.x,startPosition.y,player.transform.position.z) ;
-                Camera.main.transform.position = new Vector3(startPosition.x,startPosition.y,Camera.main.transform.position.z);
-                Camera.main.GetComponent<cameraMovement>().UpdateBounds(basicRoom.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
-*/
-                break;
+            ChangeRoom(TransitionMap[door]);
         }
     }
 
-    public void ChangeRoom(GameObject room)
+    public void ChangeRoom(TransitionMapping t)
     {
         transition.StartTransition();
-        Vector2 startPosition = room.transform.Find("startPoint").gameObject.transform.position;
+        Vector2 startPosition = t.entryPoint.position;
         player.transform.position = new Vector3(startPosition.x, startPosition.y, player.transform.position.z);
         Camera.main.transform.position = new Vector3(startPosition.x, startPosition.y, Camera.main.transform.position.z);
-        Camera.main.GetComponent<cameraMovement>().UpdateBounds(room.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
+        Camera.main.GetComponent<cameraMovement>().UpdateBounds(t.entryRoom.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
     }
 
 }
