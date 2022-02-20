@@ -756,29 +756,29 @@ MonoBehaviour:
     pitch: 1
   - name: Cave
     clip: {fileID: 8300000, guid: 486534b5d2254fd49b3e42a8727126aa, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
   SFX:
   - name: Water
     clip: {fileID: 8300000, guid: 7092470066a2bc34dbc4d3efccacb813, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
   - name: Puzzle
     clip: {fileID: 8300000, guid: 34c10f76b1c93184aba08dac3d401c15, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
   - name: Text
     clip: {fileID: 8300000, guid: c1ab2e76e9468dd4e99ad1e4dafd82cc, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
   - name: TextConfirm
     clip: {fileID: 8300000, guid: f7dca1e5c9e5b5c428db4dc04d654d02, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
   - name: Wind
     clip: {fileID: 8300000, guid: a03bed7c14716ab4ba5fbc2b5aecd92b, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.75
+    pitch: 1
 --- !u!4 &1083208673
 Transform:
   m_ObjectHideFlags: 0
