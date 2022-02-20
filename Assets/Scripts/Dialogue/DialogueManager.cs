@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+// Should be on its own gameObject
+
+// Set up the dialogue to display in the DialogueTrigger class
 public class DialogueManager : MonoBehaviour
 {
 
@@ -19,9 +23,14 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private string sentence;
 
+
+    [Tooltip("The reference to a TextMeshPro gameObject where the characters name should be displayed")]
     public TextMeshProUGUI NameText;
+    [Tooltip("The reference to a TextMeshPro gameObject where the dialogue")]
     public TextMeshProUGUI dialogueText;
 
+    //Holds the current Coroutine running that is typing dialogue.
+    //If not null then stop the coroutine and put all dialogue in dialogue Text
     private Coroutine TypingCoroutine;
 
 
@@ -44,6 +53,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+
+    /* SHOULD BE CALLED ONLY THROUGH DIALOGUETRIGGER
+     * Use to start a dialogue event. */
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with " + dialogue.name);
@@ -58,8 +70,10 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    //Called for every sentence of dialogue. If called while still displaying
-    //then will immediately display all text
+    /* Called for every sentence of dialogue. 
+     * If called while still displaying
+     * then will immediately display all text 
+     */
     public void DisplayNextSentence()
     {
         if(TypingCoroutine != null)
@@ -81,6 +95,7 @@ public class DialogueManager : MonoBehaviour
     
 
     //Types the sentence on screen one letter at a time
+    //(Should only be called by DisplayNextSentence)
     IEnumerator TypeSentence(string sentence)
     {
         sentence.Replace("$Name", NameText.text);   //not optimal, might find a better place/way depending on
