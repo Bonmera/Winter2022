@@ -63,32 +63,10 @@ public class GameManager : MonoBehaviour
 
     public void SwitchRoom(Collider2D door)
     {
-        ChangeRoom(TransitionMap[door]);
-        
-        
-       
-        
-        //    case "protagRoom":
-                //Entering Kitchen
-                // ChangeRoom(janitorClosetRoom);
-                //Entering Janitor Closet
-                // ChangeRoom(janitorClosetRoom);
-                //Entering Storage Room
-                // ChangeRoom(storageRoom);
-                //Entering Groove
-    //              ChangeRoom(grooveRoom);
-
-                //ChangeRoom(firstFloorHallway);
-
-                //Entering BasicRoom
-                /*transition.StartTransition();
-                Vector2 startPosition = basicRoom.transform.Find("startPoint").gameObject.transform.position;
-                player.transform.position = new Vector3(startPosition.x,startPosition.y,player.transform.position.z) ;
-                Camera.main.transform.position = new Vector3(startPosition.x,startPosition.y,Camera.main.transform.position.z);
-                Camera.main.GetComponent<cameraMovement>().UpdateBounds(basicRoom.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
-*/
-    //            break;
-        
+        if(TransitionMap.ContainsKey(door))
+        {
+            ChangeRoom(TransitionMap[door]);
+        }
     }
 
     public void ChangeRoom(TransitionMapping t)

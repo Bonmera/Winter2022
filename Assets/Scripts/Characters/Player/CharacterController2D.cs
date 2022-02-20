@@ -15,7 +15,8 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_CurrVelocity = Vector3.zero;
     private Vector2 screenBounds;
     private Vector2 playerOffset;
- 
+    private Vector2 cameraOffset;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -26,6 +27,9 @@ public class CharacterController2D : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         playerOffset.x = transform.GetComponent<SpriteRenderer>().bounds.size.x/2;
         playerOffset.y = transform.GetComponent<SpriteRenderer>().bounds.size.y/2;
+        Vector2 cameraOffset = Camera.main.transform.position;
+        screenBounds.x =Mathf.Abs(  cameraOffset.x - screenBounds.x);
+        screenBounds.y =Mathf.Abs( cameraOffset.y - screenBounds.y);
     }
 
     // Update is called once per frame
@@ -53,7 +57,10 @@ public class CharacterController2D : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.transform.position.x-1*screenBounds.x + playerOffset.x , Camera.main.transform.position.x+ screenBounds.x - playerOffset.x ), Mathf.Clamp(transform.position.y, Camera.main.transform.position.y-screenBounds.y + playerOffset.y , Camera.main.transform.position.y + screenBounds.y - playerOffset.y ), transform.position.z);
+        transform.position = new Vector3(
+                                        Mathf.Clamp(transform.position.x, Camera.main.transform.position.x  + -1*screenBounds.x + playerOffset.x , Camera.main.transform.position.x + screenBounds.x - playerOffset.x ), 
+                                        Mathf.Clamp(transform.position.y, Camera.main.transform.position.y  - screenBounds.y + playerOffset.y , Camera.main.transform.position.y + screenBounds.y - playerOffset.y ), 
+                                        transform.position.z);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

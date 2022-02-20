@@ -19,6 +19,9 @@ public class cameraMovement : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         offset = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
+        Vector2 cameraOffset = Camera.main.transform.position;
+        offset.x = Mathf.Abs(cameraOffset.x - offset.x);
+        offset.y = Mathf.Abs(cameraOffset.y - offset.y);
         xMin = mapBounds.bounds.min.x + offset.x;
         xMax = mapBounds.bounds.max.x - offset.x;
         yMin = mapBounds.bounds.min.y + offset.y;
