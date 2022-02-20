@@ -58,11 +58,9 @@ public class CharacterController2D : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        string[] tagNames = collision.gameObject.tag.Split('_');
-        
-        if(tagNames.Length > 1 && tagNames[tagNames.Length - 1].Equals("Exit"))
+        if(collision.gameObject.tag.Equals("Exit"))
         {
-            gameManager.SwitchRoom(tagNames[0]);
+            gameManager.SwitchRoom(collision.collider);
         }
     }
 

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class TransitionScript : MonoBehaviour
 {
     private Image image;
+    private GameObject transitionPanel;
 
     // Start is called before the first frame update
     void Start()
     {
+        transitionPanel = transform.gameObject;
         image = transform.GetComponent<Image>();
     }
 
@@ -26,21 +28,16 @@ public class TransitionScript : MonoBehaviour
 
     IEnumerator Transition()
     {
-        transform.gameObject.SetActive(true);
+        image.enabled = true;
         GameObject.Find("Player").GetComponent<CharacterController2D>().enabled = false;
-        
-        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        for (float i = 1.5f; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
             image.color = new Color(0, 0, 0, i);
             yield return null;
         }
         // fade from transparent to opaque
-
-        transform.gameObject.SetActive(false);
         GameObject.Find("Player").GetComponent<CharacterController2D>().enabled = true;
+        image.enabled = false;
     }
-
-
-
 }
