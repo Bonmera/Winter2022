@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InventoryItem
   - protagRoom_Exit
+  - basicRoom_Exit
   layers:
   - Default
   - TransparentFX

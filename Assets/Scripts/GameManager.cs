@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public GameObject InventoryPanel;
     public GameObject protagRoom;
     public GameObject basicRoom;
+    public GameObject kitchenRoom;
+    public GameObject janitorClosetRoom;
+    public GameObject storageRoom;
+    public GameObject grooveRoom;
     public GameObject player;
 
     private TransitionScript transition;
@@ -33,12 +37,33 @@ public class GameManager : MonoBehaviour
         switch (originRoom)
         {
             case "protagRoom":
-                transition.StartTransition();
+                //Entering Kitchen
+                // ChangeRoom(janitorClosetRoom);
+                //Entering Janitor Closet
+                // ChangeRoom(janitorClosetRoom);
+                //Entering Storage Room
+                // ChangeRoom(storageRoom);
+                //Entering Groove
+                ChangeRoom(grooveRoom);
+
+                //Entering BasicRoom
+                /*transition.StartTransition();
                 Vector2 startPosition = basicRoom.transform.Find("startPoint").gameObject.transform.position;
                 player.transform.position = new Vector3(startPosition.x,startPosition.y,player.transform.position.z) ;
                 Camera.main.transform.position = new Vector3(startPosition.x,startPosition.y,Camera.main.transform.position.z);
                 Camera.main.GetComponent<cameraMovement>().UpdateBounds(basicRoom.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
+*/
                 break;
         }
     }
+
+    public void ChangeRoom(GameObject room)
+    {
+        transition.StartTransition();
+        Vector2 startPosition = room.transform.Find("startPoint").gameObject.transform.position;
+        player.transform.position = new Vector3(startPosition.x, startPosition.y, player.transform.position.z);
+        Camera.main.transform.position = new Vector3(startPosition.x, startPosition.y, Camera.main.transform.position.z);
+        Camera.main.GetComponent<cameraMovement>().UpdateBounds(room.transform.Find("boundaries").gameObject.GetComponent<BoxCollider2D>());
+    }
+
 }
