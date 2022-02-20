@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5456571334872217770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.131, y: -0.04, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 5456571335647140435}
   m_Father: {fileID: 0}
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueToTrigger: {fileID: 7134948789488155730}
+  gameManager: {fileID: 0}
 --- !u!114 &7134948789488155730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,4 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Parental Figure
-    sentences: []
+    sentences:
+    - Hey! What is that?
+    - Then why are you hiding it from me?
+    - Wha- What are you talking about
+    - "After all I\u2019ve done looking after you... Get back here, NOW! "

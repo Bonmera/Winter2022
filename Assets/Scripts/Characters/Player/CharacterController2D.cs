@@ -17,7 +17,7 @@ public class CharacterController2D : MonoBehaviour
     private Vector2 playerOffset;
     [SerializeField]
     private Animator animator;
-    private bool MovingVert = false;
+    private bool Moving = false;
     private Vector2 cameraOffset;
 
 
@@ -52,9 +52,18 @@ public class CharacterController2D : MonoBehaviour
         k_HorizontalSpeed = Input.GetAxisRaw("Horizontal") * k_BaseSpeed;
         k_VerticalSpeed = Input.GetAxisRaw("Vertical") * k_BaseSpeed;
 
+        if(k_HorizontalSpeed != 0 || k_VerticalSpeed != 0 )
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving",false);
+        }
+
         animator.SetFloat("Horizontal", k_HorizontalSpeed);
         animator.SetFloat("Vertical", k_VerticalSpeed);
-
+        
 
     }
 
@@ -78,6 +87,14 @@ public class CharacterController2D : MonoBehaviour
         {
             gameManager.SwitchRoom(collision.collider);
         }
+    }
+
+    public void StopMovement()
+    {
+        m_Rigidbody2D.velocity = Vector2.zero;
+        animator.SetBool("Moving", false);
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 0);
     }
 
 }

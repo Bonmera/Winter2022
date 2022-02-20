@@ -29,7 +29,9 @@ public class TransitionScript : MonoBehaviour
     IEnumerator Transition()
     {
         image.enabled = true;
-        GameObject.Find("Player").GetComponent<CharacterController2D>().enabled = false;
+        CharacterController2D playerController = GameObject.Find("Player").GetComponent<CharacterController2D>();
+        playerController.StopMovement();
+        playerController.enabled = false;
         for (float i = 1.5f; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
@@ -37,7 +39,7 @@ public class TransitionScript : MonoBehaviour
             yield return null;
         }
         // fade from transparent to opaque
-        GameObject.Find("Player").GetComponent<CharacterController2D>().enabled = true;
+        playerController.enabled = true;
         image.enabled = false;
     }
 }

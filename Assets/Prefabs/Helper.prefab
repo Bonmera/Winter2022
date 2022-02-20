@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5456571334872217770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.131, y: -0.04, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 5456571335647140435}
   m_Father: {fileID: 0}
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueToTrigger: {fileID: 7884054984703985228}
+  gameManager: {fileID: 0}
 --- !u!114 &7884054984703985228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,4 +199,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Helper
-    sentences: []
+    sentences:
+    - 'Psst.. Hey kid... I overheard your conversation with PF. '
+    - "You betcha. What if I told you there was more to life than what\u2019s inside
+      these walls?"
+    - 'Yeah, kid. But for good reason according to her... '
+    - "She\u2019s already lost a youngling who dared to venture beyond."
+    - Personally, I think we should all be able to move freely however we see fit,
+    - "but there is security in knowing we\u2019re safe right here."
+    - "Firstly, you\u2019ll need to gather supplies. "
+    - "You\u2019ll need some rope to craft a ladder. "
+    - "I think there\u2019s some in the janitor\u2019s closet... but it won\u2019t
+      be easy. "
+    - "You\u2019ll have to sneak past PF to reach it. "
+    - "Come back here once you\u2019ve found the rope, I\u2019ll help you craft the
+      ladder."
