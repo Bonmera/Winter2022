@@ -758,6 +758,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 486534b5d2254fd49b3e42a8727126aa, type: 3}
     volume: 0.75
     pitch: 1
+  - name: Chase
+    clip: {fileID: 8300000, guid: 8ae473012af95f243b1a5ae66894d0ad, type: 3}
+    volume: 0.75
+    pitch: 1
   SFX:
   - name: Water
     clip: {fileID: 8300000, guid: 7092470066a2bc34dbc4d3efccacb813, type: 3}

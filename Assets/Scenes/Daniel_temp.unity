@@ -314,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   k_BaseSpeed: 10
   m_MovementSmoothing: 0.15
+  gameManager: {fileID: 0}
 --- !u!50 &310565370
 Rigidbody2D:
   serializedVersion: 4
@@ -1384,7 +1385,7 @@ MonoBehaviour:
       - m_Target: {fileID: 543834099}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DisplayNextSentence
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

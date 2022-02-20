@@ -15,7 +15,12 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_CurrVelocity = Vector3.zero;
     private Vector2 screenBounds;
     private Vector2 playerOffset;
- 
+
+
+    [SerializeField]
+    private Animator animator;
+    private bool MovingVert = false;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -43,6 +48,11 @@ public class CharacterController2D : MonoBehaviour
     {
         k_HorizontalSpeed = Input.GetAxisRaw("Horizontal") * k_BaseSpeed;
         k_VerticalSpeed = Input.GetAxisRaw("Vertical") * k_BaseSpeed;
+
+        animator.SetFloat("Horizontal", k_HorizontalSpeed);
+        animator.SetFloat("Vertical", k_VerticalSpeed);
+
+
     }
 
     private void MoveCharacter()

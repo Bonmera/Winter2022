@@ -20,9 +20,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
     private Queue<string> sentences;
     private string sentence;
-
+    private int isDone = -1;
 
     [Tooltip("The reference to a TextMeshPro gameObject where the characters name should be displayed")]
     public TextMeshProUGUI NameText;
@@ -61,6 +62,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Starting conversation with " + dialogue.name);
 
         NameText.text = dialogue.name;
+        isDone = 0;
         sentences.Clear();
         foreach(string sentence in dialogue.sentences)
         {
@@ -73,8 +75,10 @@ public class DialogueManager : MonoBehaviour
     /* Called for every sentence of dialogue. 
      * If called while still displaying
      * then will immediately display all text 
+     * param (choice): pass what sentence should be read next depending on
+     * players choice
      */
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(int choice = 0)
     {
         if(TypingCoroutine != null)
         {
@@ -109,9 +113,23 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
+        sentences.Clear();
+        sentence = "";
+        isDone = 1;
+        if (TypingCoroutine != null)
+        {
+            StopCoroutine(TypingCoroutine);
+            TypingCoroutine = null;
+        }
         Debug.Log("End Conversation.");
     }
 
+    public bool IsDone()
+    {
+        if (isDone == 1)
+            return true;
+        return false;
+    }
 }

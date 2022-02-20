@@ -10,7 +10,7 @@ public class PlayerSensor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && focus!=null)
+        if (Input.GetKeyDown(KeyCode.E) && focus!=null)
         {
             focus.Interact();
         }

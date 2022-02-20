@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject storageRoom;
     public GameObject grooveRoom;
     public GameObject player;
+    public GameObject DialogueBox;
 
     private TransitionScript transition;
     private AudioManager audioManager;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         transition = transitionPanel.GetComponent<TransitionScript>();
         InventoryPanel.SetActive(false);
+        DialogueBox.SetActive(false);
         audioManager = AudioManager.instance;
         if(audioManager == null)
         {
