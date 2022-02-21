@@ -81,12 +81,17 @@ public class CharacterController2D : MonoBehaviour
                                         transform.position.z);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag.Equals("Exit"))
         {
             gameManager.SwitchRoom(collision.collider);
         }
+        else if(collision.gameObject.tag.Equals("Golem_Exit"))
+        {
+            gameManager.TriggerExitDialog();
+        }
+
     }
 
     public void StopMovement()

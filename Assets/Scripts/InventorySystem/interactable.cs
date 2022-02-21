@@ -20,14 +20,13 @@ public class interactable : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     void Update()
     {
-       /* if (Input.GetKeyDown("space") && isFocus && !hasInteracted)
+        if (Input.GetKeyDown("space") && isFocus && !hasInteracted)
         {
             Interact();
             hasInteracted = true;
-        }*/ 
+        }
     }
     
     public void OnFocused(Transform playerTransform)

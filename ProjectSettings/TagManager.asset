@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InventoryItem
   - Exit
+  - Golem_Exit
   layers:
   - Default
   - TransparentFX

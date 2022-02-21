@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DialogueEditor;
 
 public class Inventory : MonoBehaviour
 {
@@ -42,4 +43,29 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
+
+    public bool CheckIfRopeExists()
+    {
+        if(items.Count > 0)
+        {
+            foreach(item i in items)
+            {
+                if (i.name.Equals("Rope"))
+                {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+        
+    }
+
+    //Function to update value in conversation
+    public void UpdateHasRope()
+    {
+        bool value = CheckIfRopeExists();
+        ConversationManager.Instance.SetBool("hasRope", value);
+    }
+
 }

@@ -1,60 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DialogueEditor;
 
 public class NPCSensor : MonoBehaviour
 {
-
-    public DialogueTrigger dialogueToTrigger;
     [SerializeField] private GameManager gameManager;
+    [SerializeField]
+    private NPCConversation[] conversations;    
+    private bool isDialogTriggered = false;
+    private int conversationIndex = 0;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && dialogueToTrigger != null && dialogueToTrigger.HasBeenTriggered())
-        {
-            if (DialogueManager.Instance.IsDone())
-            {
-                gameManager.DialogueBox.SetActive(false);
-
-            }
-            else
-            {
-                DialogueManager.Instance.DisplayNextSentence();
-            }
-        }
 
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && !collision.isTrigger)
+
+        if (collision.tag == "Player" && !collision.isTrigger && isDialogTriggered == false && conversations.Length > conversationIndex)
         {
-            if (dialogueToTrigger != null)
-            {
-                gameManager.DialogueBox.SetActive(true);
-                dialogueToTrigger.TriggerDialogue();
-            }
-            else
-            {
-                Debug.LogError("Should have dialogue set.");
-            }
+            isDialogTriggered = true;
+            ConversationManager.Instance.StartConversation(conversations[conversationIndex]);
         }
+
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && !collision.isTrigger)
+        if (collision.tag == "Player" && !collision.isTrigger && isDialogTriggered == true)
         {
-            if (dialogueToTrigger != null)
-            {
-                DialogueManager.Instance.EndDialogue();
-                gameManager.DialogueBox.SetActive(false);
-
-            }
-            else
-            {
-                Debug.LogError("Should have dialogue set.");
-            }
+            isDialogTriggered = false;
+            ConversationManager.Instance.EndConversation();
         }
     }
+
+    public void UpdateConversationIndex()
+    {
+        conversationIndex++;
+    }
+
+
 }
