@@ -4199,15 +4199,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 7
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":239,\"yPos\":164},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":505,\"yPos\":164},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":359,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don\u2019t
-    you love living here? Everything we need is within these walls.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":522,\"yPos\":284},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It\u2019s
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":240,\"yPos\":164},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":506,\"yPos\":165},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":359,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don\u2019t
+    you love living here? Everything we need is within these walls.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":523,\"yPos\":282},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It\u2019s
     great and all, but I can\u2019t help but wonder if there\u2019s anything else
-    out there?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"You\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":211,\"yPos\":281},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yeah,
+    out there?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"You\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.257},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":213,\"yPos\":283},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yeah,
     it\u2019s great here and I love you very much, but I\u2019m curious, is there
-    anything else out there?\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"You\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":531,\"yPos\":417},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Silly
+    anything else out there?\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"You\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.38},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":522,\"yPos\":401},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Silly
     child! Where did you get such an absurd idea? Of course there isn\u2019t! Believe
-    me, if there was something out there, I\u2019d let you know.\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":517,\"yPos\":522},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Now
-    go on and enjoy your silly games. I have adult stuff to do.\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    me, if there was something out there, I\u2019d let you know.\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.318},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":518,\"yPos\":522},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Now
+    go on and enjoy your silly games. I have adult stuff to do.\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Elder\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.201}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -5273,7 +5273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_RootOrder
@@ -5281,7 +5281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5289,7 +5289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchorMin.y
@@ -5297,11 +5297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1121.2727
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 397.84
+      value: 397.83997
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5333,11 +5333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000023842
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -247.67
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5349,6 +5349,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397328785183581690, guid: b9d9d427217cc384babda90b57641072, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 397328785382818406, guid: b9d9d427217cc384babda90b57641072, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -55.826
+      objectReference: {fileID: 0}
+    - target: {fileID: 397328785382818406, guid: b9d9d427217cc384babda90b57641072, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
