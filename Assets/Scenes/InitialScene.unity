@@ -831,7 +831,6 @@ GameObject:
   - component: {fileID: 722018983}
   - component: {fileID: 722018984}
   - component: {fileID: 722018985}
-  - component: {fileID: 722018986}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -975,20 +974,6 @@ MonoBehaviour:
   - entryRoom: {fileID: 764234702}
     exitCollider: {fileID: 2072711148}
     entryPoint: {fileID: 1491792350}
---- !u!114 &722018986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722018982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b13212598370a77428a9c30d536b6513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Music: []
-  SFX: []
 --- !u!1001 &727841307
 PrefabInstance:
   m_ObjectHideFlags: 0
